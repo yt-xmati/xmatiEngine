@@ -207,7 +207,7 @@ class MainMenuState extends MusicBeatState
 				else
 				{
 					selectedSomethin = true;
-					FlxTween.tween(FlxG.camera, {zoom: 1.5, angle: 40}, 5, {ease: FlxEase.expoOut});
+					FlxTween.tween(FlxG.camera, {zoom: 1.5, angle: 80}, 5, {ease: FlxEase.expoOut});
 
 					if(ClientPrefs.flashing) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
 
