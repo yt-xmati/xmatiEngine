@@ -103,26 +103,26 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionShit.length)
 		{
-						var menuItemTween:FlxTween;
+						var menuItemsTween:FlxTween;
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
-			menuItem.scale.x = scale;
-			menuItem.scale.y = scale;
-			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
-			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
-			menuItem.animation.play('idle');
-			menuItem.ID = i;
-			menuItem.screenCenter(X);
-			menuItems.add(menuItem);
-			menuItem.angle = 17;
-			menuItemTween =  FlxTween.tween(menuItem, { x: 600 }, 1.3, {ease: FlxEase.cubeOut, type: FlxTween.ONESHOT});
+			var menuItems:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
+			menuItems.scale.x = scale;
+			menuItems.scale.y = scale;
+			menuItems.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
+			menuItems.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
+			menuItems.animation.addByPrefix('selected', optionShit[i] + " white", 24);
+			menuItems.animation.play('idle');
+			menuItems.ID = i;
+			menuItems.screenCenter(X);
+			menuItems.add(menuItems);
+			menuItems.angle = 17;
+			menuItemsTween =  FlxTween.tween(menuItems, { x: 600 }, 1.3, {ease: FlxEase.cubeOut, type: FlxTween.ONESHOT});
 			var scr:Float = (optionShit.length - 4) * 0.135;
 			if(optionShit.length < 6) scr = 0;
-			menuItem.scrollFactor.set(0, scr);
-			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+			menuItems.scrollFactor.set(0, scr);
+			menuItems.antialiasing = ClientPrefs.globalAntialiasing;
 			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
-			menuItem.updateHitbox();
+			menuItems.updateHitbox();
 		}
 
 		FlxG.camera.follow(camFollowPos, null, 1);
