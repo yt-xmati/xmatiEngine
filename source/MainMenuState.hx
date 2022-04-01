@@ -312,7 +312,6 @@ class MainMenuState extends MusicBeatState
 						y: -100,
 						angle: 4
 					}, 0.5, {ease: FlxEase.quadOut});
-					FlxTween.tween(icon, {x: icon.x - 20, y: icon.y + 20}, 0.5, {ease: FlxEase.quadOut});
 				}
 			}
 
@@ -338,7 +337,6 @@ class MainMenuState extends MusicBeatState
 							y: logoBl.y - 30,
 							angle: 4
 						}, 0.8, {ease: FlxEase.quadOut});
-						FlxTween.tween(icon, {x: icon.x - 10, y: icon.y + 10}, 0.8, {ease: FlxEase.quadOut});
 					}
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
 					{
